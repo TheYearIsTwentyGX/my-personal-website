@@ -8,6 +8,7 @@ body {
     position: absolute;
     width: 30px;
     position: absolute;
+    border-radius: 5px;
 }
 
 #playField {
@@ -18,6 +19,7 @@ body {
     position: relative;
     text-align: center;
     width: 400px;
+    border-radius: 25px;
 }
 h1, h2, h3 {
     text-align: center;
