@@ -1,3 +1,24 @@
 body {
-    background: blue;
+    background: seagreen;
+}
+
+#player, #playerMirror {
+    background-color: seagreen;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+    position: absolute;
+}
+
+#playField {
+    background-color: rgb(65, 59, 46);
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 400px;
+}
+h1, h2, h3 {
+    text-align: center;
 }
