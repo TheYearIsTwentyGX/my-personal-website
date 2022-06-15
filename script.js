@@ -2,18 +2,28 @@ const h2 = document.createElement("h2");
 h2.textContent = "This content added via JavaScript";
 document.querySelector("h1").parentElement.insertBefore(h2, document.querySelector("h1").nextSibling);
 
-const playField = document.getElementById("playField").getBoundingClientRect();
-const spdDwn = document.getElementById("spdDown");
-const spdUp = document.getElementById("spdUp");
-spdDwn.style.left = `${playField.left + 25}px`;
-spdDwn.style.top = `${playField.bottom + 25}px`;
-spdUp.style.left = `${playField.right - spdUp.clientWidth - 25}px`;
-spdUp.style.top = `${playField.bottom + 25}px`;
-
 const playerMirror = document.getElementById("playerMirror");
 const playerSq = document.getElementById("player");
 
-const moveSpeed = 2;
+let moveSpeed = 2;
+
+const spdDwn = document.getElementById("spdDown");
+const spdUp = document.getElementById("spdUp");
+const spdLabel = document.getElementById("spdDisplay");
+spdDwn.addEventListener('click', decreaseSpeed);
+spdUp.addEventListener('click', increaseSpeed);
+
+function decreaseSpeed() {
+    if (moveSpeed > 0)
+        moveSpeed--;
+    spdLabel.textContent = `Speed: ${moveSpeed}`;
+}
+function increaseSpeed() {
+    if (moveSpeed < 30)
+        moveSpeed++;
+    spdLabel.textContent = `Speed: ${moveSpeed}`;
+}
+
 
 document.addEventListener("keydown", function (event) {
     //Keep player within playField boundaries, looping if necessary
